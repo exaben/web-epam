@@ -1,18 +1,32 @@
 package hu.nye.project.datingapp.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 public class UserDTO {
 
     private Long id;
+    @NotBlank
     private String firstname;
     private String lastname;
     private String username;
+    @NotNull
     private Date birthDate;
     private String email;
     private String password;
+    private String City;
 
-    public UserDTO(){}
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
+
+    public UserDTO() {
+    }
 
     public Long getId() {
         return id;

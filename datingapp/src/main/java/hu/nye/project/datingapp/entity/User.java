@@ -1,6 +1,9 @@
 package hu.nye.project.datingapp.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
@@ -15,8 +18,18 @@ public class User {
     private Date birthDate;
     private String email;
     private String password;
+    private String City;
 
-    public User(){}
+    public String getCity() {
+        return City;
+    }
+
+    public void setCity(String city) {
+        City = city;
+    }
+
+    public User() {
+    }
 
     public Long getId() {
         return id;
