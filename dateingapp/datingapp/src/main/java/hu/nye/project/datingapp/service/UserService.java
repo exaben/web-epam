@@ -2,7 +2,6 @@ package hu.nye.project.datingapp.service;
 
 import hu.nye.project.datingapp.dto.UserCreateDTO;
 import hu.nye.project.datingapp.dto.UserDTO;
-import hu.nye.project.datingapp.dto.UserUpdateDTO;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +14,7 @@ public interface UserService {
 
     Optional<UserDTO> findById(Long id);
 
-    UserUpdateDTO update(UserUpdateDTO userUpdateDTO);
+    UserCreateDTO update(UserCreateDTO userCreateDTO, Long id);
 
     void delete(Long id);
 

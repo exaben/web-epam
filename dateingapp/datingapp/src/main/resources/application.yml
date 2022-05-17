@@ -1,8 +1,9 @@
 #http://localhost:8080/h2-console/login.jsp?jsessionid=9e3523cbded72771c9dd2627ebd87e9b
-
+#jdbc:h2:mem:datingapp
+#jdbc:h2:./data
 spring:
   datasource:
-    url: jdbc:h2:mem:datingapp
+    url: jdbc:h2:./data
     username: admin
     password: password
   h2:

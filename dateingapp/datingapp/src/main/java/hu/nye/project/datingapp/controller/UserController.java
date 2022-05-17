@@ -2,7 +2,6 @@ package hu.nye.project.datingapp.controller;
 
 import hu.nye.project.datingapp.dto.UserCreateDTO;
 import hu.nye.project.datingapp.dto.UserDTO;
-import hu.nye.project.datingapp.dto.UserUpdateDTO;
 import hu.nye.project.datingapp.service.UserService;
 import hu.nye.project.datingapp.util.CheckError;
 import org.springframework.http.HttpStatus;
@@ -53,11 +52,11 @@ public class UserController {
         return response;
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
-    public ResponseEntity<UserUpdateDTO> update(@RequestBody @Valid UserUpdateDTO userUpdateDTO, BindingResult bindingResult) {
+    @RequestMapping(path = "/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<UserCreateDTO> update(@RequestBody @Valid UserCreateDTO userCreateDTO,@PathVariable Long id, BindingResult bindingResult) {
         this.checkError.checkForRequestErrors(bindingResult, "user");
 
-        UserUpdateDTO updatedUser = userService.update(userUpdateDTO);
+        UserCreateDTO updatedUser = userService.update(userCreateDTO, id);
         return ResponseEntity.ok(updatedUser);
     }
 

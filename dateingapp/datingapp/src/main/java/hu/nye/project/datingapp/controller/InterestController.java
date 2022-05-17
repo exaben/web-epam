@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
 
+//erdeklodesi korok kezelese
 @RestController
 @RequestMapping(path = "/interests")
 public class InterestController {

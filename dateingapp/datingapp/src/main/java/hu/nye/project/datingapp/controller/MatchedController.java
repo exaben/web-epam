@@ -22,6 +22,7 @@ public class MatchedController {
         this.matchedService = matchedService;
     }
 
+    //leker minden matchet
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<MatchedDTO>> findAll() {
         return ResponseEntity.ok(this.matchedService.findAll());
@@ -32,6 +33,7 @@ public class MatchedController {
         return ResponseEntity.ok(this.matchedService.findAllUserMatchedById(id));
     }
 
+    //letrehoz egy uj matchet
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<MatchedDTO> create(@RequestBody @Valid MatchedDTO matchedDTO, BindingResult bindingResult) {
         this.checkError.checkForRequestErrors(bindingResult, "matched");

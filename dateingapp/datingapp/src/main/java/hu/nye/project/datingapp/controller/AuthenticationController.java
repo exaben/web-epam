@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
+//bejelentkezes
 @RestController
 @RequestMapping(path = "/authentication")
 public class AuthenticationController {

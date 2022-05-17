@@ -45,12 +45,14 @@ public class MessageServiceImpl implements MessageService {
             throw new NotFoundException("User not found with id=" + receivedId);
         }
 
+        //oda vissza kezeli az özeneteket
         List<Message> messagesBySender = this.messageRepository.findUserMessagesBySenderIdAndReceivedId(senderId, receivedId);
         List<Message> messagesByReceived = this.messageRepository.findUserMessagesBySenderIdAndReceivedId(receivedId, senderId);
 
         List<Message> messageList = Stream.concat(messagesBySender.stream(), messagesByReceived.stream())
                 .collect(Collectors.toList());
 
+        //dátum alapján rendezi az üzeneteket
         Comparator<Message> comparatorId = (Message m1, Message m2) -> m1.getSendDate().compareTo(m2.getSendDate());
 
         messageList.sort(comparatorId);

@@ -8,31 +8,24 @@ import java.util.Date;
 public class UserCreateDTO {
 
     @NotBlank
-    private String firstname;
-
-    @NotBlank
-    private String lastname;
-
-    @NotBlank
     private String username;
 
     @NotBlank
     private String email;
-
-    @NotNull
-    private Date birthDate;
+    @NotBlank
+    private String firstname;
 
     @NotBlank
-    private String password;
+    private String lastname;
+    private Date birthDate;
 
-    public String getPassword() {
-        return password;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
-
     public String getFirstname() {
         return firstname;
     }
@@ -49,6 +42,18 @@ public class UserCreateDTO {
         this.lastname = lastname;
     }
 
+    @NotBlank
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
     public String getUsername() {
         return username;
     }
@@ -63,14 +68,6 @@ public class UserCreateDTO {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
     }
 
     public UserCreateDTO() {}

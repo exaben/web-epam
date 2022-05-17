@@ -16,12 +16,6 @@ public class User {
     private Long id;
 
     @NotBlank
-    private String firstname;
-
-    @NotBlank
-    private String lastname;
-
-    @NotBlank
     private String username;
 
     @NotBlank
@@ -29,9 +23,6 @@ public class User {
 
     @NotBlank
     private String password;
-
-    @NotNull
-    private Date birthDate;
 
     public User() {
     }
@@ -44,21 +35,7 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
 
     public String getUsername() {
         return username;
@@ -66,14 +43,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public Date getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(Date birthDate) {
-        this.birthDate = birthDate;
     }
 
     public String getEmail() {

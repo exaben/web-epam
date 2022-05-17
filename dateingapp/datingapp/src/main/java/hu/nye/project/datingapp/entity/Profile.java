@@ -4,7 +4,9 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -14,13 +16,45 @@ public class Profile {
     @GeneratedValue
     private Long id;
 
+    @NotBlank
+    private String firstname;
+
+    @NotBlank
+    private String lastname;
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
     @NotNull
-    private Long userID;
+    private Long userId;
 
     private String description;
 
     @ElementCollection
     private Set<String> interests;
+
+    private Date birthDate;
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
 
     private String imagePath;
 
@@ -36,11 +70,11 @@ public class Profile {
     }
 
     public Long getUserID() {
-        return userID;
+        return userId;
     }
 
     public void setUserID(Long userID) {
-        this.userID = userID;
+        this.userId = userID;
     }
 
     public String getDescription() {

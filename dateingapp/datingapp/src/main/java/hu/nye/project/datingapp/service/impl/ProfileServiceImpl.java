@@ -34,7 +34,7 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Override
     public Optional<ProfileDTO> findById(Long id) {
-        Optional<Profile> optionalProfile = this.profileRepository.findById(id);
+        Optional<Profile> optionalProfile = this.profileRepository.findByUserId(id);
         return optionalProfile.map(profile -> modelMapper.map(profile, ProfileDTO.class));
     }
 

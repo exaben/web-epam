@@ -13,6 +13,7 @@ public class JwtConfiguration {
     @Autowired
     private JwtConfigurationProperties jwtConfigurationProperties;
 
+    //jelszo titkositasa
     @Bean
     public Algorithm hmac256Algorithm() {
         return Algorithm.HMAC256(jwtConfigurationProperties.getSecret());
