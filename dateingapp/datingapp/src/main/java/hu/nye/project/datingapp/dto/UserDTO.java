@@ -16,6 +16,10 @@ public class UserDTO {
 
     private String token;
 
+
+    public UserDTO() {
+    }
+
     public String getToken() {
         return token;
     }
@@ -23,10 +27,6 @@ public class UserDTO {
     public void setToken(String token) {
         this.token = token;
     }
-
-    public UserDTO() {
-    }
-
     public Long getId() {
         return id;
     }

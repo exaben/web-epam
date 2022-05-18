@@ -17,7 +17,11 @@ public class UserCreateDTO {
 
     @NotBlank
     private String lastname;
+
     private Date birthDate;
+
+    @NotBlank
+    private String password;
 
     public Date getBirthDate() {
         return birthDate;
@@ -42,9 +46,6 @@ public class UserCreateDTO {
         this.lastname = lastname;
     }
 
-    @NotBlank
-    private String password;
-
     public String getPassword() {
         return password;
     }
@@ -52,7 +53,6 @@ public class UserCreateDTO {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
     public String getUsername() {
         return username;

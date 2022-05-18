@@ -27,9 +27,9 @@ public class ProfileDTO {
 
     private String imagePath;
 
-
     public ProfileDTO() {
     }
+
     public Date getBirthDate() {
         return birthDate;
     }
