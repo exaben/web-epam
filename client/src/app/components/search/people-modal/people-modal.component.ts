@@ -12,5 +12,12 @@ export class PeopleModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggle = true;
+  status = 'Enable';
+
+  heartChangeColor() {
+    this.toggle = !this.toggle;
+    this.status = this.toggle ? 'Enable' : 'Disable';
+  }
  
 }
