@@ -14,6 +14,8 @@ import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { HomeComponent } from './components/home/home.component';
 import { PeopleModalComponent } from './components/search/people-modal/people-modal.component';
+import { NavbarHomeComponent } from './reusables/navbar-home/navbar-home.component';
+import { NavbarLogedComponent } from './reusables/navbar-loged/navbar-loged.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { PeopleModalComponent } from './components/search/people-modal/people-mo
     AppLayoutComponent,
     HomeLayoutComponent,
     HomeComponent,
-    PeopleModalComponent
+    PeopleModalComponent,
+    NavbarHomeComponent,
+    NavbarLogedComponent
   ],
   imports: [
     BrowserModule,
