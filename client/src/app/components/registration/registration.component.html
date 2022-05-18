@@ -1,1 +1,94 @@
-<p>registration works!</p>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+      <h1>Regisztráció</h1>
+      <hr>
+      <div>
+        <label for="firstname"><b>Keresztnév</b></label>
+        <input type="text" placeholder="Írja ide a keresztnevét" name="firstname" id="firstname" required>
+      </div>
+        <!--Input mezo-->
+      <div *ngIf="registerForm.get('firstname')!.touched && registerForm.get('firstname')!.invalid" class="text danger" style="font-size: x-small" ></div>
+      <!--Error mezo-->
+    <!--
+    <div *ngIf="registerForm.get('firstname')?.errors?.required">
+    <p>error</p>
+    </div>
+--> 
+<div>
+    <label for="lastname"><b>Vezetéknévnév</b></label>
+    <input type="text" placeholder="Írja ide a vezetéknevét" name="lastname" id="lastname" required>
+</div>
+<!--Input mezo-->
+<div *ngIf="registerForm.get('lastname')!.touched && registerForm.get('lastname')!.invalid" class="text danger" style="font-size: x-small" ></div>
+<!--Error mezo-->
+<!--
+<div *ngIf="registerForm.get('firstname')?.errors?.required">
+<p>error</p>
+</div>
+--> 
+      <div>
+        <label for="username"><b>Felhasználónév</b></label>
+        <input type="text" placeholder="Írja ide a Felhasználónevét" name="username" id="username" required>
+      </div>
+      <!--Input mezo-->
+<div *ngIf="registerForm.get('username')!.touched && registerForm.get('username')!.invalid" class="text danger" style="font-size: x-small" ></div>
+<!--Error mezo-->
+<!--
+<div *ngIf="registerForm.get('lastname')?.errors?.required">
+<p>error</p>
+</div>
+--> 
+      <div>
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Írja ide az email címét" name="email" id="email" required>
+      </div>
+      <!--Input mezo-->
+    <div *ngIf="registerForm.get('username')!.touched && registerForm.get('username')!.invalid" class="text danger" style="font-size: x-small" ></div>
+      <!--Error mezo-->
+<!--
+<div *ngIf="registerForm.get('username')?.errors?.required">
+<p>error</p>
+</div>
+--> 
+      <div>
+          <label for="birthdate"><b>Születési idő</b></label>
+        <input type="date" name="birthdate" id="birthdate" required>
+    </div>
+     <!--Input mezo-->
+     <div *ngIf="registerForm.get('birthdate')!.touched && registerForm.get('birthdate')!.invalid" class="date danger" style="font-size: x-small" ></div>
+     <!--Error mezo-->
+<!--
+<div *ngIf="registerForm.get('username')?.errors?.required">
+<p>error</p>
+</div>
+--> 
+      
+     <div>
+        <label for="psw"><b>Jelszó</b></label>
+        <input type="password" placeholder="Írja be a jelszót" name="psw" id="psw" required>
+     </div>
+     <!--Input mezo-->
+     <div *ngIf="registerForm.get('birthdate')!.touched && registerForm.get('birthdate')!.invalid" class="date danger" style="font-size: x-small" ></div>
+      <!--Error mezo-->
+<!--
+<div *ngIf="registerForm.get('username')?.errors?.required">
+<p>error</p>
+</div>
+--> 
+      <div>
+      <label for="pswrepeat"><b>Jelszó megerősítése</b></label>
+      <input type="password" placeholder="Jelszó újra" name="pswrepeat" id="pswrepeat" required>
+      <button type="submit" class="registerbtn">Regisztráció</button>
+    </div>
+    <!--Input mezo-->
+    <div *ngIf="registerForm.get('birthdate')!.touched && registerForm.get('birthdate')!.invalid" class="date danger" style="font-size: x-small" ></div>
+    <!--Error mezo-->
+<!--
+<div *ngIf="registerForm.get('username')?.errors?.required">
+<p>error</p>
+</div>
+--> 
+</div>
+    
+  </form>
+
