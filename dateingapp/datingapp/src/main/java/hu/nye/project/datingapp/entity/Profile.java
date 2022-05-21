@@ -22,6 +22,24 @@ public class Profile {
     @NotBlank
     private String lastname;
 
+    @NotNull
+    private Long userId;
+
+    private String description;
+
+    @ElementCollection
+    private Set<String> interests;
+
+    private Date birthDate;
+
+    private String imagePath;
+
+    private String city;
+
+    public Profile() {
+    }
+
+
     public String getFirstname() {
         return firstname;
     }
@@ -38,15 +56,6 @@ public class Profile {
         this.lastname = lastname;
     }
 
-    @NotNull
-    private Long userId;
-
-    private String description;
-
-    @ElementCollection
-    private Set<String> interests;
-
-    private Date birthDate;
 
     public Date getBirthDate() {
         return birthDate;
@@ -54,11 +63,6 @@ public class Profile {
 
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
-    }
-
-    private String imagePath;
-
-    public Profile() {
     }
 
     public Long getId() {
@@ -108,6 +112,4 @@ public class Profile {
     public void setCity(String city) {
         this.city = city;
     }
-
-    private String city;
 }

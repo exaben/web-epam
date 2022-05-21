@@ -23,7 +23,7 @@ public class UserCreateDTO {
     @NotBlank
     private String password;
 
-    public Date getBirthDate() {
+   public Date getBirthDate() {
         return birthDate;
     }
 
