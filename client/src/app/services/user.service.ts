@@ -11,7 +11,7 @@ export class UserService {
   url: string = API_URL;
 
   constructor(private http: HttpClient) {
-    this.url += "/" ;
+    this.url += "/users" ;
    }
 
   getAll(): Observable<UserType[]>{

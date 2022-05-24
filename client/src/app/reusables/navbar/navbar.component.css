@@ -27,4 +27,8 @@
     background-color: rgb(234, 82, 110);
     text-decoration: underline;
 }
-
+#navbar ul li a:active
+{
+    color: rgb(255, 247, 165);
+    background-color: rgb(234, 82, 110);
+}

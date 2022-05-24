@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { UserType } from 'src/app/models/user';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-people-modal',
@@ -7,10 +8,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class PeopleModalComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
  
 }

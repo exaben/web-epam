@@ -9,13 +9,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
-import { NavbarComponent } from './reusables/navbar/navbar.component';
 import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { HomeComponent } from './components/home/home.component';
-import { PeopleModalComponent } from './components/search/people-modal/people-modal.component';
+import { PeopleModalComponent } from './components/search/people-card/people-modal/people-modal.component';
 import { NavbarHomeComponent } from './reusables/navbar-home/navbar-home.component';
 import { NavbarLogedComponent } from './reusables/navbar-loged/navbar-loged.component';
+import { PeopleCardComponent } from './components/search/people-card/people-card.component';
 
 
 @NgModule({
@@ -25,13 +25,15 @@ import { NavbarLogedComponent } from './reusables/navbar-loged/navbar-loged.comp
     RegistrationComponent,
     ProfileComponent,
     SearchComponent,
-    NavbarComponent,
+    NavbarHomeComponent,
+    NavbarLogedComponent,
     AppLayoutComponent,
     HomeLayoutComponent,
     HomeComponent,
     PeopleModalComponent,
     NavbarHomeComponent,
-    NavbarLogedComponent
+    NavbarLogedComponent,
+    PeopleCardComponent
   ],
   imports: [
     BrowserModule,
