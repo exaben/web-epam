@@ -3,6 +3,8 @@ package hu.nye.project.datingapp.dto;
 import javax.persistence.ElementCollection;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Date;
 import java.util.Set;
 
@@ -18,7 +20,7 @@ public class ProfileDTO {
 
     private String description;
 
-    private Date birthDate;
+    private LocalDate birthDate;
 
     private int age;
 
@@ -30,11 +32,11 @@ public class ProfileDTO {
     public ProfileDTO() {
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
     public String getFirstname() {
@@ -54,7 +56,7 @@ public class ProfileDTO {
     }
 
     public int getAge() {
-        return new Date().getYear() - this.birthDate.getYear();
+        return Period.between(this.birthDate, LocalDate.now()).getYears();
     }
 
     public void setAge(int age) {

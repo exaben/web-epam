@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -30,7 +31,7 @@ public class Profile {
     @ElementCollection
     private Set<String> interests;
 
-    private Date birthDate;
+    private LocalDate birthDate;
 
     private String imagePath;
 
@@ -57,11 +58,11 @@ public class Profile {
     }
 
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
