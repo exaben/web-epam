@@ -84,6 +84,18 @@
   <p class="text-danger">Születési dátum megadása kötelező</p>
 </div>
 
+<div>
+  <label for="psw"><b>Jelszó</b></label>
+<input type="password" name="psw" id="psw" required>
+</div>
+<!--Input mezo-->
+<div *ngIf="registerForm.get('psw')!.touched && registerForm.get('psw')!.invalid" class="date danger" style="font-size: x-small" ></div>
+<!--Error mezo-->
+
+<div *ngIf="registerForm.get('psw')?.errors?.required">
+<p class="text-danger">Jelszó megadása kötelező</p>
+</div>
+
       
      <div>
         <label for="psw"><b>Jelszó</b></label>
