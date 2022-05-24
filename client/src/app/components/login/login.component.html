@@ -7,13 +7,13 @@
 
           <div class="form-group mt-3">
 
-              <input type="text" formControlName="username" id="username" placeholder="felhasznalonev"
+              <input type="text" formControlName="username" id="username" placeholder="Ide írja a felhasználónevét"
                   class="form-control border-0 border-bottom shadow-none">
           </div>
 
           <div class="form-group mt-3">
 
-              <input type="password" formControlName="password" id="password" placeholder="Jelszo"
+              <input type="password" formControlName="password" id="password" placeholder="Ide írja a jelszavát"
                   class="form-control border-0 border-bottom shadow-none">
           </div>
 
@@ -24,12 +24,12 @@
 
       <div class="card-footer">
           <div class="text-center mt-3">
-              <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Bejelentkezes</button>
+              <button type="submit">Bejelentkezes</button>
           </div>
 
           <p class="text-center mt-2">
 
-              <a [routerLink]="'../registration'"> regi</a>
+              <a [routerLink]="'../registration'"> Regisztráció</a>
           </p>
       </div>
   </form>
