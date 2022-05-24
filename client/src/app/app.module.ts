@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
@@ -14,7 +14,7 @@ import { AppLayoutComponent } from './layouts/app-layout/app-layout.component';
 import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component';
 import { HomeComponent } from './components/home/home.component';
 import { PeopleModalComponent } from './components/search/people-modal/people-modal.component';
-
+import { MyInterceptor } from './interceptor/MyInterceptor';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,9 @@ import { PeopleModalComponent } from './components/search/people-modal/people-mo
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

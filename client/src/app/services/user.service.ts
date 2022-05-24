@@ -11,7 +11,7 @@ export class UserService {
   url: string = API_URL;
 
   constructor(private http: HttpClient) {
-    this.url += "/" ;
+    this.url += "/users" ;
    }
 
   getAll(): Observable<UserType[]>{
@@ -23,7 +23,7 @@ export class UserService {
   }
 
   post(user: UserType): Observable<UserType> {
-    return this.http.post<UserType>(this.url,user);
+    return this.http.post<UserType>(this.url,user) as Observable<UserType>;
   }
 
   put(user: UserType): Observable<UserType>{

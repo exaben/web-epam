@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { sha512 } from 'js-sha512';
 import { AuthService } from 'src/app/services/http-services/auth.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
  onSubmit(): void {
    if(this.loginForm.valid){
      let user = this.loginForm.getRawValue();
-     user.password = (user.password);
+     user.password = sha512(user.password);
 
      this.authService.login(user).subscribe(
        response => {

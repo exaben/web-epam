@@ -61,14 +61,14 @@
       </div>
       
       <div>
-        <label for="birthdate"><b>Születési idő</b></label>
-        <input type="date" placeholder="Írja ide a születési idejét" formControlName="birthdate" id="birthdate" required>
+        <label for="birthDate"><b>Születési idő</b></label>
+        <input type="date" placeholder="Írja ide a születési idejét" formControlName="birthDate" id="birthDate" required>
       </div>
         <!--Input mezo-->
-      <div *ngIf="registerForm.get('birthdate')!.touched && registerForm.get('birthdate')!.invalid" class="text danger" style="font-size: x-small" >
+      <div *ngIf="registerForm.get('birthDate')!.touched && registerForm.get('birthDate')!.invalid" class="text danger" style="font-size: x-small" >
         
       <!--Error mezo-->
-        <div *ngIf="registerForm.get('birthdate')?.errors?.required">
+        <div *ngIf="registerForm.get('birthDate')?.errors?.required">
           <p class="text-danger">Születési idő megadása kötelező</p>
         </div>
        
@@ -95,10 +95,16 @@
       <div *ngIf="registerForm.get('pswrepeat')!.touched && registerForm.get('pswrepeat')!.invalid" class="text danger" style="font-size: x-small" >
         
       <!--Error mezo-->
-        <div *ngIf="registerForm.get('pswrepeat')?.errors?.required">
-          <p class="text-danger">Jelszó megadása kötelező újra</p>
+        <div *ngIf="registerForm.get('pswrepeat')?.errors?.notSamePassword">
+          <p class="text-danger">Nem egyezik a két jelszó</p>
         </div>
       </div>
+
+      <div class="form-group">
+        <button type="submit" class="registerbtn">Regisztráció</button>
+
+
+    </div>
 
     </div>
 
