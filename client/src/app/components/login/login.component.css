@@ -1,4 +1,4 @@
-/* Full-width inputs */
+/* inputok szélessége */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -6,7 +6,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
   
-  /* Set a style for all buttons */
+  /* Gombok */
   button {
     background-color: #ff0000;
     color: rgb(255, 255, 255);
@@ -15,10 +15,7 @@ input[type=text], input[type=password] {
     width: 100%;
   }
   
-  /* Add a hover effect for buttons */
-  button:hover {
-    opacity: 0.5;
-  }
+ /* card középen*/
   .card{
     margin: 0;
     position: absolute;
@@ -26,11 +23,7 @@ input[type=text], input[type=password] {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-  }
-
+  /* szélesség */
   .width{
     width: 500px;
   }
