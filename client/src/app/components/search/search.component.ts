@@ -1,4 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { UserType } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
+import { Component, EventEmitter, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -7,10 +10,23 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  user: UserType[] = [];
+
+  constructor(private userService: UserService, private router: Router ) {
+    this.getUsers();
+   }
 
   ngOnInit(): void {
   }
 
+  getUsers(){
+    this.userService.getAll().subscribe(
+      response => {
+        this.user = response;
+        console.log(this.user);
+      }
+    )
+
+  }
 
 }
