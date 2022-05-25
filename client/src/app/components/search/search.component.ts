@@ -2,9 +2,12 @@ import { UserType } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 import { Component, EventEmitter, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
 import { ProfileService } from 'src/app/services/profile.service';
 import { ProfileType } from 'src/app/models/profile';
 import { formatDate } from '@angular/common';
+=======
+>>>>>>> b183f6361ea7eec243769b97121ef1211e925723
 
 @Component({
   selector: 'app-search',
@@ -14,6 +17,7 @@ import { formatDate } from '@angular/common';
 export class SearchComponent implements OnInit {
 
   user: UserType[] = [];
+<<<<<<< HEAD
   profile!: ProfileType[];
 
   currentDate: Date = new Date();
@@ -21,6 +25,11 @@ export class SearchComponent implements OnInit {
   constructor(private profileService: ProfileService,private userService: UserService ,private router: Router ) {
     this.getUsers();
     this.getProfile();
+=======
+
+  constructor(private userService: UserService, private router: Router ) {
+    this.getUsers();
+>>>>>>> b183f6361ea7eec243769b97121ef1211e925723
    }
 
   ngOnInit(): void {
@@ -33,6 +42,7 @@ export class SearchComponent implements OnInit {
         console.log(this.user);
       }
     )
+<<<<<<< HEAD
   }
 
   getProfile() {
@@ -53,5 +63,9 @@ export class SearchComponent implements OnInit {
   }
 
  
+=======
+
+  }
+>>>>>>> b183f6361ea7eec243769b97121ef1211e925723
 
 }

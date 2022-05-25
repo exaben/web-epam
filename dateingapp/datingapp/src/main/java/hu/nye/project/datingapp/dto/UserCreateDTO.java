@@ -2,6 +2,7 @@ package hu.nye.project.datingapp.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Date;
 
 //regisztráció
@@ -18,16 +19,16 @@ public class UserCreateDTO {
     @NotBlank
     private String lastname;
 
-    private Date birthDate;
+    private LocalDate birthDate;
 
     @NotBlank
     private String password;
 
-    public Date getBirthDate() {
+   public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
     public String getFirstname() {

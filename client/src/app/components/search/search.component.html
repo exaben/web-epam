@@ -2,11 +2,16 @@
 <h1>Felfedezés</h1>
 <h2>Találkozz új emberekkel</h2>
 
+<<<<<<< HEAD
 <div class="kartya" *ngFor="let p of profile">
     <app-people-card
     [profile]="getProfileById(p.id)"
     >
     </app-people-card>
     
+=======
+<div class="kartya" *ngFor="let u of user">
+    <span> {{ u.username }} </span>
+>>>>>>> b183f6361ea7eec243769b97121ef1211e925723
 </div>
 <app-people-modal></app-people-modal>

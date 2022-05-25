@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -21,6 +22,24 @@ public class Profile {
 
     @NotBlank
     private String lastname;
+
+    @NotNull
+    private Long userId;
+
+    private String description;
+
+    @ElementCollection
+    private Set<String> interests;
+
+    private LocalDate birthDate;
+
+    private String imagePath;
+
+    private String city;
+
+    public Profile() {
+    }
+
 
     public String getFirstname() {
         return firstname;
@@ -38,27 +57,13 @@ public class Profile {
         this.lastname = lastname;
     }
 
-    @NotNull
-    private Long userId;
 
-    private String description;
-
-    @ElementCollection
-    private Set<String> interests;
-
-    private Date birthDate;
-
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
-    }
-
-    private String imagePath;
-
-    public Profile() {
     }
 
     public Long getId() {
@@ -108,6 +113,4 @@ public class Profile {
     public void setCity(String city) {
         this.city = city;
     }
-
-    private String city;
 }
