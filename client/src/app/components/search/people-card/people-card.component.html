@@ -1,12 +1,12 @@
-
-<div class="card-body" role="button" data-bs-toggle="modal" [attr.data-bs-target]="user.username + '-' + user.id" >
-    <span> {{ user.username }}</span>
+<div class="card-body" data-bs-toggle="modal" role="button" [attr.data-bs-target]="'#'  + profile.id">
+    <div>
+        {{profile.firstname}} {{profile.lastname}}
+        {{profile.age}}
+    </div>
     
-    <span> {{ user.email }}</span>
 </div>
 
 <app-people-modal
-    (actionEmit) = "actionEmit.emit(false)"
+    [profile]="profile"
 >
-
 </app-people-modal>

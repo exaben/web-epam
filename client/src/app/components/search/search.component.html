@@ -1,6 +1,12 @@
-        <h1>Felfedezés</h1>
-        <h2>Találkozz új emberekkel</h2>
-        
-        <div class="kartya" *ngFor="let u of user">
-            <span> {{ u.username }} </span>
-        </div>
+<button class="button btn-primary" data-bs-toggle="modal" data-bs-target="#profileModal">People profile</button>
+<h1>Felfedezés</h1>
+<h2>Találkozz új emberekkel</h2>
+
+<div class="kartya" *ngFor="let p of profile">
+    <app-people-card
+    [profile]="getProfileById(p.id)"
+    >
+    </app-people-card>
+    
+</div>
+<app-people-modal></app-people-modal>

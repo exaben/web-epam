@@ -1,5 +1,5 @@
-import { UserType } from 'src/app/models/user';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ProfileType } from 'src/app/models/profile';
 
 @Component({
   selector: 'app-people-modal',
@@ -8,12 +8,20 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class PeopleModalComponent implements OnInit {
 
-  
   constructor() { }
+
+  @Input()
+  profile!: ProfileType;
 
   ngOnInit(): void {
   }
 
-  
+  toggle = true;
+  status = 'Enable';
+
+  heartChangeColor() {
+    this.toggle = !this.toggle;
+    this.status = this.toggle ? 'Enable' : 'Disable';
+  }
  
 }

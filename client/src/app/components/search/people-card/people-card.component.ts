@@ -1,5 +1,6 @@
+import { Component, Input, OnInit } from '@angular/core';
+import { ProfileType } from 'src/app/models/profile';
 import { UserType } from 'src/app/models/user';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-people-card',
@@ -11,18 +12,12 @@ export class PeopleCardComponent implements OnInit {
   @Input()
   user!: UserType;
 
-  @Output()
-  actionEmit = new EventEmitter<boolean>()
+  @Input()
+  profile!: ProfileType;
 
   constructor() { }
 
-  ngOnInit(): void 
-  {
-
+  ngOnInit(): void {
   }
-
- 
-
- 
 
 }
