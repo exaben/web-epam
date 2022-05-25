@@ -1,27 +1,46 @@
-<form [formGroup]="profileForm">
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
-  <div class="card">
-    <label for="first-name">Keresztnév: </label>
-    <input id="first-name" type="text" formControlName="firstName">
-  
-    <label for="last-name">Vezetéknév: </label>
-    <input id="last-name" type="text" formControlName="lastName">
-  
-    <label for="user-name">Felhasználónév: </label>
-    <input id="user-name" type="text" formControlName="userName">
-    <label for="user-name">Email cím: </label>
-    <input id="email" type="email" formControlName="email">
-    <label for="opass">Régi jelszó: </label>
-    <input id="opass" type="password" formControlName="opass">
-    <label for="npass">Új jelszó: </label>
-    <input id="npass" type="password" formControlName="npass">
-    <label for="cpass">Új jelszó megerősítés: </label>
-    <input id="cpass" type="password" formControlName="cpass">
+  <div class="container">
+    <h1>Saját profil</h1>
+    <hr>
+    
+    <div>
+      <label for="fullname">Teljes név: </label>
+      <input id="fullname" type="text" formControlName="fullName">
+    </div>
+    <div><label for="username">Felhasználónév: </label>
+      <input id="username" type="text" formControlName="userName">
+    </div>
+    <div>
+      <label for="birthDate">Születési idő</label>
+      <input id="birthDate" type="date"  formControlName="birthDate"  >
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input id="email" type="text" formControlName="email" >
+    </div>
+    <div>
+      <label for="opassword">Régi jelszó</label>
+      <input id="opassword" type="password"  formControlName="opassword"  required>
+    </div>
+    <div>
+      <label for="password">Jelszó</label>
+      <input type="password" placeholder="Írja ide a Jelszavát" formControlName="password" id="password" required>
+    </div>
+    <div>
+      <label for="pswrepeat">Jelszó újra</label>
+      <input type="password" placeholder="Írja ide a Jelszavát újra" formControlName="pswrepeat" id="pswrepeat" required>
+    </div>
+    
   </div>
 
 </form>
-<button (click)="profileDisable()">Vissza</button>
-<button (click)="profileEnable()">Szerkesztés</button><br/> 
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()"></form>
-<p>Frissités gombra nyomni.</p>
-<button type="submit" [disabled]="!profileForm.valid">Frissités</button>
+<div class="form-group">
+  <p class="text-center mt-2">
+    <button (click)="profileDisable()">Mégse</button>
+    <button (click)="profileEnable()">Szerkesztés</button><br />
+
+
+    <button type="submit" class="Szerkesztés">Mentés</button>
+  </p>
+</div>
