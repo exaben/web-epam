@@ -2,9 +2,5 @@
         <h2>Találkozz új emberekkel</h2>
         
         <div class="kartya" *ngFor="let u of user">
-            <!-- <span> {{ u.username }} </span> -->
-            <app-people-card
-                (actionEmit) = "getUsers()"
-                [user] = "u"
-                ></app-people-card>
+            <span> {{ u.username }} </span>
         </div>
