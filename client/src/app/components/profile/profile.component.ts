@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { UserType } from 'src/app/models/user';
@@ -17,6 +17,8 @@ import { sha512 } from 'js-sha512';
 export class ProfileComponent implements OnInit {
   profileForm!: FormGroup;
   constructor(private userService:UserService,private profileService:ProfileService) { }
+  @Input()
+  profile!: ProfileType;
   profileDisable() {
     this.profileForm.disable();
   }    
@@ -51,6 +53,8 @@ export class ProfileComponent implements OnInit {
     this.profileForm = new FormGroup({
       
       fullName: new FormControl(null, [Validators.required] ),
+      firstName: new FormControl(null, [Validators.required] ),
+      lastName: new FormControl(null, [Validators.required] ),
       userName: new FormControl(null, [Validators.required, Validators.minLength(5)] ),
       email: new FormControl(null, [Validators.required, Validators.email]),
       birthDate: new FormControl(null, [Validators.required]),

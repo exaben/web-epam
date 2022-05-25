@@ -6,7 +6,15 @@
     
     <div>
       <label for="fullname">Teljes név: </label>
-      <input id="fullname" type="text" formControlName="fullName">
+      <input id="fullname"  type="text" formControlName="fullName">
+    </div>
+    <div>
+      <label for="firstname">Keresztnév: </label>
+      <input id="firstname" type="text" formControlName="firstName">
+    </div>
+    <div>
+      <label for="lastname">Vezetéknév: </label>
+      <input id="lastname"  type="text" formControlName="lastName">
     </div>
     <div><label for="username">Felhasználónév: </label>
       <input id="username" type="text" formControlName="userName">
@@ -25,11 +33,11 @@
     </div>
     <div>
       <label for="password">Jelszó</label>
-      <input type="password" placeholder="Írja ide a Jelszavát" formControlName="password" id="password" required>
+      <input type="password" formControlName="password" id="password" required>
     </div>
     <div>
       <label for="pswrepeat">Jelszó újra</label>
-      <input type="password" placeholder="Írja ide a Jelszavát újra" formControlName="pswrepeat" id="pswrepeat" required>
+      <input type="password" formControlName="pswrepeat" id="pswrepeat" required>
     </div>
     <div><label for="interest">Érdeklődés: </label>
       <input id="interest" type="text" formControlName="interest">
