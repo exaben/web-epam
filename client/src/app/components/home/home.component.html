@@ -1,13 +1,10 @@
-<head>
-    <title>Kezdőoldal</title>
-</head>
-<body background="hatter.png">
-    <div class="tarolo">
-        <p>
-            Üdvözöllek az oldalukon, ha már tagja vagy akkor kattints a bejelentkezés gombra és jelentkezz be
-        </p>
-        <button type="button" class="gomb">Bejelentkezés</button>
-        <p>Ha esetleg még nem regisztráltál akkor kattints a regisztráció gomba</p>
-        <button type="button" class="gomb">Regisztráció</button> 
+<div class="container mt-5">
+    <div style="text-align: center">
+        <h1>Találd meg az életed párját</h1>
+        <p class="lead">Ha tag vagy lépj be hanem akkor, ... pedig csak annyit kell tenned, hogy regisztrálsz!</p>
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Regisztráció</button>
+            <button class="btn btn-primary btn-lg mr-2" (click)="loginToggle()">Bejelentkezés</button>
+        </div>
     </div>
-</body>
+</div>

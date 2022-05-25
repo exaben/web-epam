@@ -15,8 +15,9 @@ import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component
 import { HomeComponent } from './components/home/home.component';
 import { PeopleModalComponent } from './components/search/people-modal/people-modal.component';
 import { MyInterceptor } from './interceptor/MyInterceptor';
-import { NavbarLogedComponent } from './reusables/navbar/navbar-loged/navbar-loged.component';
-import { NavbarHomeComponent } from './reusables/navbar/navbar-home/navbar-home.component';
+import { NavbarHomeComponent } from './reusables/navbar-home/navbar-home.component';
+import { NavbarLogedComponent } from './reusables/navbar-loged/navbar-loged.component';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +31,9 @@ import { NavbarHomeComponent } from './reusables/navbar/navbar-home/navbar-home.
     HomeLayoutComponent,
     HomeComponent,
     PeopleModalComponent,
+    NavbarHomeComponent,
     NavbarLogedComponent,
-    NavbarHomeComponent
+
   ],
   imports: [
     BrowserModule,
