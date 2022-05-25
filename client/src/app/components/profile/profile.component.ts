@@ -26,7 +26,13 @@ export class ProfileComponent implements OnInit {
   
   onSubmit() {
     let user: UserType = this.profileForm.getRawValue();
+    let profile: ProfileType = this.profileForm.getRawValue();
     user.password = sha512(this.profileForm.get('password')?.value)
+    this.profileService.put(profile).subscribe(
+      response => {
+        console.log(response);
+      },
+    )
     this.userService.put(user).subscribe(
       response => {
         console.log(response);
@@ -50,7 +56,9 @@ export class ProfileComponent implements OnInit {
       birthDate: new FormControl(null, [Validators.required]),
       opassword: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.pattern('^(?=.[a-z])(?=.[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')]),
-      pswrepeat: new FormControl(null, [Validators.required, this.samePasswordValidators.bind(this)])
+      pswrepeat: new FormControl(null, [Validators.required, this.samePasswordValidators.bind(this)]),
+      interest: new FormControl(null),
+      description: new FormControl(null),
     });
     
     this.userService.getById(140).subscribe(
@@ -58,7 +66,11 @@ export class ProfileComponent implements OnInit {
         console.log(response);
       },
     )
-    
+    this.profileService.getById(140).subscribe(
+      response => {
+        console.log(response);
+      },
+    )
     
   }
 
