@@ -61,12 +61,12 @@ export class ProfileComponent implements OnInit {
       description: new FormControl(null),
     });
     
-    this.userService.getById(140).subscribe(
+    this.userService.getById(129).subscribe(
       response => {
         console.log(response);
       },
     )
-    this.profileService.getById(140).subscribe(
+    this.profileService.getById(129).subscribe(
       response => {
         console.log(response);
       },
