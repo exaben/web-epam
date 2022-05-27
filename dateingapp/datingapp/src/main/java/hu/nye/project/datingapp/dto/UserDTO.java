@@ -27,7 +27,6 @@ public class UserDTO {
     public void setToken(String token) {
         this.token = token;
     }
-
     public Long getId() {
         return id;
     }

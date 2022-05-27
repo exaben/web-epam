@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { sha512 } from 'js-sha512';
-import { AuthService } from 'src/app/services/http-services/auth.service';
+import { UserType } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -11,32 +9,24 @@ import { AuthService } from 'src/app/services/http-services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!: FormGroup;
+  users: UserType[] = [];
 
-  constructor( private authService: AuthService, private router: Router) { 
+  constructor(private userService: UserService) { 
+    this.getUser();
   }
 
- onSubmit(): void {
-   if(this.loginForm.valid){
-     let user = this.loginForm.getRawValue();
-     user.password = sha512(user.password);
+  ngOnInit(): void {
+  }
 
-     this.authService.login(user).subscribe(
-       response => {
-         localStorage.setItem("user", JSON.stringify(response));
-         this.router.navigate(['../profile']);
-       },error => {
-        this.loginForm.get('username')?.setErrors({incorrect: true})
+  getUser(){
+    this.userService.getAll().subscribe(
+      response =>{
+        this.users = response;
+        console.log(response);
       }
-     )
-   }
-
- }
-
- ngOnInit(): void {
-  this.loginForm = new FormGroup({
-    username: new FormControl(null, [Validators.required]),
-    password: new FormControl(null, [Validators.required])
-  });
+      
+    )
+      
+    }
   }
-}
+

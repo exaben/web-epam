@@ -15,7 +15,7 @@ export class UserService {
    }
 
   getAll(): Observable<UserType[]>{
-    return this.http.get(`${this.url}`) as Observable<UserType[]>;
+    return this.http.get(this.url) as Observable<UserType[]>;
   }
 
   getById(id: number): Observable<UserType[]>{
@@ -28,9 +28,5 @@ export class UserService {
 
   put(user: UserType): Observable<UserType>{
     return this.http.put<UserType>(this.url, user);
-  }
-
-  delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`)
   }
 }
